@@ -39,7 +39,6 @@ module.exports = function (app) {
         result: {
           text: data.data.text,
           size: data.data.size,
-          author: "Alpiann",
           format: data.data.format,
           qr: data.data.qr_code
         }
