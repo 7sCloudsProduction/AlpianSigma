@@ -258,6 +258,16 @@
       "name": "Tools",
       "items": [
         {
+  "name": "QR Text Generator",
+  "desc": "Membuat QR Code dari teks atau URL",
+  "path": "/tools/qrtext?text=",
+  "status": "ready",
+  "params": {
+    "text": "Teks atau URL yang ingin dijadikan QR",
+    "type": "Opsional: tambahkan 'image' untuk output PNG langsung"
+  }
+},
+        {
   "name": "Pterodactyl Panel Creator",
   "desc": "Buat user dan server otomatis di panel Pterodactyl dengan konfigurasi disk, CPU, dan root admin",
   "path": "/tools/panel?domain=&apikeyptero=&capikeyptero=&nameserver=&disk=&cpu=&password=&rootadmin=",
