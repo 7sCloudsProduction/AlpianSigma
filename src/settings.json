@@ -43,14 +43,15 @@
           }
         },
         {
-          "name": "Gemini",
-          "desc": "AI Assistant by Alpian – chat dengan Gemini AI",
-          "path": "/ai/gemini?text=",
-          "status": "ready",
-          "params": {
-            "text": "Teks atau perintah untuk chat AI"
-          }
-        },
+  "name": "Gemini AI",
+  "desc": "Chat AI berbasis Gemini",
+  "path": "/ai/gemini?text=&sesi=",
+  "status": "ready",
+  "params": {
+    "text": "Isi pesan yang ingin dikirim ke AI",
+    "sesi": "Nama sesi unik untuk tiap user"
+  }
+},
         {
   "name": "Grok 3 Mini",
   "desc": "AI model Grok 3 Mini untuk menjawab pertanyaan sederhana",
