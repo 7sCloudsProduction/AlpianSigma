@@ -1,36 +1,33 @@
-const axios = require('axios');
+const axios = require("axios");
 
-module.exports = function(app) {
-    // Fungsi untuk panggil API Gemini
-    async function geminiAI(text) {
-        const { data } = await axios.get('https://api.zenzxz.my.id/ai/gemini', {
-            params: { text }
-        });
-        return data;
+module.exports = function (app) {
+  app.get("/ai/gemini", async (req, res) => {
+    const { text, sesi } = req.query;
+
+    if (!text || !sesi) {
+      return res.status(400).json({
+        status: false,
+        error: "Parameter ?text= & ?sesi= wajib diisi",
+        contoh: "/ai/gemini?text=hai&sesi=Alpian"
+      });
     }
 
-    // Route API /ai/hydromind diganti untuk Gemini
-    app.get('/ai/gemini', async (req, res) => {
-        try {
-            const { text } = req.query;
-            if (!text) {
-                return res.status(400).json({ status: false, error: 'Text is required' });
-            }
+    try {
+      const { data } = await axios.get(
+        `https://izumiiiiiiii.dpdns.org/ai/gemini?text=${encodeURIComponent(text)}&sesi=${encodeURIComponent(sesi)}`
+      );
 
-            const response = await geminiAI(text);
-
-            if (!response.status) {
-                return res.status(500).json({ status: false, error: 'Gemini API failed' });
-            }
-
-            res.status(200).json({
-                status: true,
-                assistant: response.assistant,
-                uid: response.uid,
-                creator: "Alpiann"
-            });
-        } catch (error) {
-            res.status(500).json({ status: false, error: error.message });
-        }
-    });
-}
+      res.json({
+        status: data.status,
+        creator: "Alpiann",
+        message: data.message || null
+      });
+    } catch (err) {
+      res.status(500).json({
+        status: false,
+        error: "Gagal fetch Gemini",
+        detail: String(err)
+      });
+    }
+  });
+};
