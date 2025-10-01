@@ -15,6 +15,15 @@
       "name": "AI (Artificial Intelligence)",
       "items": [
         {
+  "name": "DeepSeek AI",
+  "desc": "Chat AI berbasis DeepSeek",
+  "path": "/ai/deepseek?messages=",
+  "status": "ready",
+  "params": {
+    "messages": "Isi pesan yang ingin dikirim ke AI"
+  }
+},
+        {
   "name": "MagicStudio AI",
   "desc": "Generate gambar dengan AI MagicStudio berdasarkan prompt teks",
   "path": "/ai/magicstudio?prompt=",
